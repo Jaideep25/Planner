@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Town Planing</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #FAFAFA" inspector-plugin-recast>
+      <a-assets>
+        <img id="sky" src="assets/texture/sky-texture.jpg" />
+        <img id="ground" src="assets/texture/ground-texture.jpg" />
+        <img id="ground-NRM" src="assets/texture/ground-texture-NRM.jpg" />
+        <a-asset-item id="tree" src="assets/tree/scene.gltf"></a-asset-item>
+        <a-asset-item id="bridge" src="assets/bridge/scene.gltf"></a-asset-item>
+        <a-asset-item
+          id="train-track"
+          src="assets/train_track/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item id="train" src="assets/train/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-sky radius="120" src="#sky" theta-length="180"></a-sky>
+
+      <a-cylinder
+        id="ground"
+        src="#ground"
+        radius="122"
+        height="0.1"
+        repeat="20 20"
+        normal-map="#ground-NRM"
+        normal-texture-repeat="20 20"
+      ></a-cylinder>
+      <!-- Bridge Model -->
+      <a-entity
+        scale="0.2 0.2 0.2"
+        gltf-model="#bridge"
+        rotation="0 -20 0"
+      ></a-entity>
+
+      <!-- Track 2 -->
+      <a-entity
+        scale="0.19 0.05 0.04"
+        gltf-model="#train-track"
+        rotation="0 60 0"
+        position="-5 0.24 10"
+        width="200"
+      ></a-entity>
+
+      <!-- Train2 Model -->
+      <a-entity
+        scale="0.28 0.28 0.28"
+        gltf-model="#train"
+        rotation="0 30 0"
+        position="-23.2 3 40"
+      ></a-entity>
+
+      <!-- Track 3 -->
+      <a-entity
+        scale="0.2 0.04 0.04"
+        gltf-model="#train-track"
+        rotation="0 60 0"
+        position="7 0.24 10"
+        side="double"
+      ></a-entity>
+
+      <!-- Train 3 Model -->
+      <a-entity
+        scale="0.28 0.28 0.28"
+        gltf-model="#train"
+        rotation="0 30 0"
+        position="0.2 2.9 20"
+      ></a-entity>
+
+      <!-- Tree Model -->
+      <a-entity
+        scale="0.008 0.008 0.008"
+        gltf-model="#tree"
+        position="-45 0 -10"
+      ></a-entity>
+      <a-entity
+        scale="0.008 0.008 0.008"
+        gltf-model="#tree"
+        position="-45 0 2"
+      ></a-entity>
+      <a-entity
+        scale="0.008 0.008 0.008"
+        gltf-model="#tree"
+        position="-45 0 20"
+      ></a-entity>
+      <a-entity
+        scale="0.008 0.008 0.008"
+        gltf-model="#tree"
+        position="-45 0 40"
+      ></a-entity>
+      <a-entity
+        scale="0.008 0.008 0.008"
+        gltf-model="#tree"
+        position="-45 0 52"
+      ></a-entity>
+
+      <a-entity id="main-camera" position="-40 5 120" rotation="0 -10 0">
+        <a-camera user-height="1.9"></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
